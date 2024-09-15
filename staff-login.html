@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Login Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .login-container {
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"], input[type="password"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #6cb2eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4d90fe;
+        }
+    </style>
+    <script>
+        function staffLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            // 仮のログインチェック（実際にはサーバー側での認証が必要）
+            if (username === "staff01" && password === "pa01") {
+                // ログイン成功時の処理（ここではマップページに推移）
+                window.location.href = "staffmap.html";
+            } else {
+                alert("職員用のユーザー名またはパスワードが正しくありません。");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Staff Login</h2>
+        <form onsubmit="event.preventDefault(); staffLogin();">
+            <input type="text" id="username" placeholder="ユーザー名" required>
+            <input type="password" id="password" placeholder="パスワード" required>
+            <input type="submit" value="ログイン">
+        </form>
+    </div>
+</body>
+</html>
